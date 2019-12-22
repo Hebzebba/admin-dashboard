@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dasboard</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/v4-shims.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/all.css">
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row flex-row">  
+     <div class="col-2 p-0 hide-display">
+        <div class="card  p-0" style="width: 100%; height:48rem; background-color:black;" >
+            <div class="btn-nav change-size">
+                <button type="button" class="btn text-light btn-lg change-size">
+                    
+                    <i 	class="fa fa-address-book"></i>
+                    Addres Book</button>    
+            </div>
+
+
+            <div class="btn-nav1 change-size">
+                <button type="button" class="btn text-light btn-lg change-size">
+                    
+                    <i 	class="	fa fa-bell"></i>
+                    Notification</button>    
+            </div>
+
+
+            <div class="btn-nav2 change-size">
+                <button type="button" class="btn text-light btn-lg change-size">
+                    
+                    <i 	class="fa fa-calendar"></i>
+                    Events Action</button>    
+            </div>
+
+
+            <div class="btn-nav3 change-size">
+                <button type="button" class="btn text-light btn-lg change-size">
+                    
+                    <i 	class="	fa fa-home"></i>
+                    Home Event</button>    
+            </div>
+           
+        </div>
+     </div>     
+    <div class="col p-0 fullspan">
+        <div class="card" style="width: 100%; height:5rem; background-color:black;" >
+            <div class="nav ml-5">
+                   <button class="btn btn-primary  " style="background-color: transparent; border-color:transparent">
+                       <i class="fa fa-table fa-lg"></i>
+                       <p>Table</p>
+                   </button> 
+
+
+                   <button class="btn btn-primary  " style="background-color: transparent; border-color:transparent">
+                    <i class="fa fa-line-chart "></i>
+                    <p>Line Chart</p>
+                </button> 
+
+                <button class="btn btn-primary  " style="background-color: transparent; border-color:transparent">
+                    <i class="fa fa-bar-chart "></i>
+                    <p>Bar Chart</p>
+                </button>
+
+                <button class="btn btn-primary  " style="background-color: transparent; border-color:transparent">
+                    <i class="fa fa-pie-chart "></i>
+                    <p>Pie Chart</p>
+                </button>
+
+                <button class="btn btn-primary  " style="background-color: transparent; border-color:transparent">
+                    <i class="fa fa-area-chart "></i>
+                    <p>Area Chart</p>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="row m-5">
+        <div class="col-3 ">
+            <div class="card rounding" style="width: 100%; height:6rem; background-color:hsl(0, 100%, 63%);">
+                <p class="control"> Sun <span class="fas fa-cloud-sun text-light"></span></> </p>
+            </div>
+        </div>
+
+
+        <div class="col-3 ">
+            <div class="card rounding" style="width: 100%; height:6rem; background-color:hsl(318, 24%, 62%);">
+              <p class="control"> Rain <span class="fas fa-cloud-moon-rain text-light"></span></> </p>
+            </div>
+        </div>
+        <div class="col-3 ">
+            <div class="card rounding" style="width: 100%; height:6rem;background-color:hsl(234, 100%, 15%);">
+              <p class="control"> Moon <span class="fas fa-cloud-moon text-light"></span></> </p>
+            </div>
+        </div>
+        <div class="col-3 ">
+            <div class="card rounding" style="width: 100%; height:6rem; background-color:hsl(66, 100%, 50%);">
+              <p class="control"> Storm <span class="	fas fa-poo-storm text-light"></span></> </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row m-5">
+        <div class="col-8">
+            <div class="card rounding" style="width: 100%; background-color:hsl(66, 100%, 50%);">
+                <!-- Card header -->
+            <div class="card-header text-light">Line chart</div>
+                <div class="card-body">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            <!--Card content-->
+            
+
+              
+
+        
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card rounding" style="width: 100%; background-color:rgba(12, 12, 22, 0.247);">
+                <div class="card-header text-light">Pie chart</div>
+
+                <!--Card content-->
+                
+                <div class="card-body">
+                  <canvas id="pieChart">
+    
+                  </canvas>
+                </div>
+            </div><br>
+
+            <div class="card rounding" style="width: 100%; background-color:rgba(12, 12, 22, 0.247);">
+                <div class="card-header text-light">DoughNut chart</div>
+
+                <!--Card content-->
+                
+                <div class="card-body">
+                  <canvas id="doughnutChart">
+    
+                  </canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+        
+
+
+
+</div>
+
+
+
+    
+</div>
+
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/popper.min.js"></script>
+
+
+
+    <script>
+        //line chart
+
+ //line
+ var ctxL = document.getElementById("lineChart").getContext('2d');
+ var myLineChart = new Chart(ctxL, {
+   type: 'line',
+   data: {
+     labels: ["January", "February", "March", "April", "May", "June", "July"],
+     datasets: [{
+         label: "My First dataset",
+         backgroundColor: [
+           'rgba(105, 0, 132, .2)',
+         ],
+         borderColor: [
+           'rgba(200, 99, 132, .7)',
+         ],
+         borderWidth: 2,
+         data: [65, 59, 80, 81, 56, 55, 40]
+       },
+       {
+         label: "My Second dataset",
+         backgroundColor: [
+           'rgba(0, 137, 132, .2)',
+         ],
+         borderColor: [
+           'rgba(0, 10, 130, .7)',
+         ],
+         data: [28, 48, 40, 19, 86, 27, 90]
+       }
+     ]
+   },
+   options: {
+     responsive: true
+   }
+ });
+
+
+
+
+    //pie chart
+    var ctxP = document.getElementById("pieChart").getContext('2d');
+var myPieChart = new Chart(ctxP, {
+  type: 'pie',
+  data: {
+    labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+    datasets: [{
+      data: [300, 50, 100, 40, 120],
+      backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+      hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+    }]
+  },
+  options: {
+    responsive: true,
+    legend: false
+  }
+});
+
+
+
+//doughnut
+var ctxD = document.getElementById("doughnutChart").getContext('2d');
+var myLineChart = new Chart(ctxD, {
+  type: 'doughnut',
+  data: {
+    labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+    datasets: [{
+      data: [300, 50, 100, 40, 120],
+      backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+      hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+
+    </script>
+</body>
+</html>

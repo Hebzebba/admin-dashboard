@@ -1,0 +1,55 @@
+.card{
+    border-radius: 0% !important;
+}
+
+@media screen and (max-width: 700px) {
+    .hide-display{
+        display: none;
+    }
+
+    .fullspan{
+        width: 100%;
+    }
+    
+  }
+  
+  body{
+      background-color: darkslateblue;
+  }
+
+  .rounding{
+      border-radius: 5px !important;
+      box-shadow: 5px 5px whitesmoke;
+  }
+
+  .btn-nav{
+      margin-top: 100px !important;
+  }
+
+  .change-size{
+      width: 100%;
+  }
+  .btn{
+      border-radius: 0% !important;
+  }
+
+  .btn-nav1 , .btn-nav2, .btn-nav3, .btn-nav{
+      margin-top: 30px;
+      background-color: transparent !important;
+  }
+
+  button:hover{
+      background-color: rgba(240, 240, 18, 0.548);
+      color: whitesmoke;
+  }
+
+
+  .control{
+      color: white;
+      text-align: center;
+      padding: 5px;
+      font-size: 50px;
+  }
+  .another-control{
+    font-size: 10px !important;
+  }

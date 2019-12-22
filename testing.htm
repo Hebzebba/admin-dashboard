@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="chart" style="border:1px solid #000000;"></canvas>
+
+
+
+
+
+
+
+
+    <script src="./js/mdb.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/chart.js"></script>
+    <script>
+
+        //pie
+    var ctxP = document.getElementById("chart");
+    var ctx=ctxP.getContext('2d');
+    var myPieChart = new Chart(ctxP, {
+      type: 'pie',
+      data: {
+        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        datasets: [{
+          data: [300, 50, 100, 40, 120],
+          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: false
+      }
+    });
+    </script>
+</body>
+</html>
